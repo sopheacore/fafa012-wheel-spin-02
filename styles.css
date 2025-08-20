@@ -1,0 +1,139 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #000 url('assets/bg.webp') center/contain no-repeat;
+  font-family: Arial, sans-serif;
+}
+
+
+
+.wheel-container {
+  position: relative;
+  width: 430px;
+  height: 430px;
+}
+
+.wheel-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 26%;
+    pointer-events: none;
+    scale: 1.3;
+
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+  transform: rotate(0deg);
+  scale: 1.05;
+  top: -5px;
+}
+
+.wheel img {
+  width: 100%;
+  /*height: 100%;*/
+  position: absolute;
+}
+
+.pointer {
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+
+.pointer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Spin Button Animations */
+.spin-button {
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s all ease;
+  width: 80%;
+  max-width: 490px;
+  animation: pulse 2s infinite;
+}
+
+.spin-button:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+@keyframes pulse {
+  0% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.1); }
+  100% { transform: translateX(-50%) scale(1); }
+}
+/* 🔄 Button hide animation */
+.spin-button.hide-animation {
+  animation: fadeOutScale 0.5s forwards;
+}
+
+@keyframes fadeOutScale {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+  }
+}
+
+
+/* Modals */
+.modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 300px;
+  width: 100%;
+  animation: modalFadeIn 0.5s;
+  z-index: 1001;
+  background: url('asset/bg-blank.webp') center/contain no-repeat;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  padding-top: 90px;
+}
+
+.try_again_button {
+  padding-top: 50px;
+}
+
+@keyframes modalFadeIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  body, .modal { background-size: cover; }
+  .wheel-container { width: 300px; height: 300px; }
+}
