@@ -59,7 +59,7 @@ function spinWheel() {
   setTimeout(() => {
     try {
       const rotations = 10;
-      const targetAngle = spinCount === 0 ? 110 : 10;
+      const targetAngle = spinCount === 0 ? 110 : 240;
       const totalDegrees = (rotations * 360) + targetAngle;
 
       wheel.style.transition = 'transform 4s ease-out';
