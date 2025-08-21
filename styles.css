@@ -44,7 +44,7 @@ body {
 
 .pointer {
     position: absolute;
-    top: -5%;
+    top: -10%;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
@@ -120,7 +120,7 @@ body {
 .modal-content img {
   width: 100%;
   height: auto;
-  padding-top: 90px;
+  /*padding-top: 90px;*/
 }
 
 .try_again_button {
@@ -133,7 +133,72 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 500px) {
-  body, .modal { background-size: cover; }
-  .wheel-container { width: 300px; height: 300px; }
+
+
+@media (max-width: 1280px) {
+  .modal { background-size: cover; }
+    .wheel-container { width: 500px; height: 500px; }
 }
+
+@media (max-width: 768px) {
+  .modal { background-size: cover; }
+    .wheel-container { width: 450px; height: 450px; }
+}
+
+@media (max-width: 500px) and (min-width: 441px) {
+  .modal { background-size: cover; }
+    .wheel-container { width: 300px; height: 300px; }
+}
+
+@media (max-width: 440px) and (min-width: 401px) {
+  .modal { background-size: cover; }
+    .wheel-container { width: 290px; height: 290px; }
+}
+
+@media (max-width: 400px) {
+  .modal { background-size: cover; }
+  .wheel-container { width: 270px; height: 270px;margin-top: 5%; }
+  .spin-button {bottom: -40%;}
+  .try_again_button {padding-top: 25px;}
+}
+
+@media (min-width: 768px) {
+  .modal { background-size: cover; }
+  .wheel-container { width: 260px; height: 260px;margin-top: 5%; }
+  .spin-button {bottom: -40%;}
+  .try_again_button {padding-top: 25px;}
+
+}
+
+
+-----------------------------
+/*@media (max-width: 1280px) {
+  .modal { background-size: cover; }
+    .wheel-container { width: 500px; height: 500px; }
+}
+
+@media (max-width: 768px) {
+  .modal { background-size: cover; }
+    .wheel-container { width: 450px; height: 450px; }
+}
+
+@media (max-width: 500px) and (min-width: 441px) {
+  .modal { background-size: cover; }
+    .wheel-container { width: 400px; height: 400px; }
+}
+
+@media (max-width: 440px) and (min-width: 401px) {
+  .modal { background-size: cover; }
+    .wheel-container { width: 390px; height: 390px; }
+}
+
+@media (max-width: 400px) {
+  .modal { background-size: cover; }
+    .wheel-container { width: 370px; height: 370px; }
+}
+
+@media (min-width: 768px) {
+  .modal { background-size: cover; }
+    .wheel-container { width: 350px; height: 350px; }
+}
+*/
